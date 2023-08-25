@@ -50,4 +50,3 @@
     </nav>
 </div>
 
-<!-- chat gpt ans -->
