@@ -1,86 +1,80 @@
-<div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-8 px-0">
-                <div class="owl-carousel main-carousel position-relative">
 
-                    <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="img/naik gunung kk.jpg" style="object-fit: cover;">
-                        <div class="overlay">
-                            <div class="mb-">
-                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href="">Berita</a>
-                                <a class="text-white" href="">March 21, 2023</a>
-                            </div>
-                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">JBNS telah melancarkan aktiviti mendaki gunung kinabalu</a>
-                        </div>
+
+
+   
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<?php
+$count = 0;
+$sql_slider_ba = "SELECT * FROM slider WHERE website_id='$website_id' and trash!='1' ";
+$query_slider_ba = mysqli_query($conn_cpanel, $sql_slider_ba);
+?>
+
+<div class="w3-container w3-center">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <?php
+                    while ($result_slider_indicator = mysqli_fetch_array($query_slider_ba, MYSQLI_ASSOC)) {
+                        if ($count == 0) { ?>
+                    <li data-target="#myCarousel" data-slide-to="<?php echo strval($count); ?>" class="active"></li>
+                    <?php } else { ?>
+                    <li data-target="#myCarousel" data-slide-to="<?php echo strval($count); ?>"></li>
+                    <?php }
+                        $count++;
+                    } ?>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <?php
+                    $sql_slider = "SELECT * FROM slider WHERE website_id='$website_id' and trash!='1'  LIMIT 1";
+                    $query_slider = mysqli_query($conn_cpanel, $sql_slider);
+                    $result_slider = mysqli_fetch_array($query_slider, MYSQLI_ASSOC) ?>
+                    <div class="item active">
+                        <a target="blank" href="<?php echo $result_slider['link']; ?>">
+                            <img class="d-block w-100"
+                                style="width:70%; height: 500px; margin-left: auto; margin-right: auto"
+                                src="<?php echo $url;?>media_agensi/<?php echo $website_id ?>/slider/<?php echo $result_slider['gambar'] ?>">
+                        </a>
                     </div>
 
-                    <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="img/amanta.jpg" style="object-fit: cover;">
-                        <div class="overlay">
-                            <div class="mb-2">
-                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href="blog_gunung.html">Berita Terbaru</a>
-                                <a class="text-white" href="">March 21, 2023</a>
-                            </div>
-                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="blog_gunung.html">Amanat Bendahari Negeri dilaksanakan dengan jayanya pada 16 Februari 2023, bertempat di Dewan Wisma Wanita.
-                                </a>
-                        </div>
+                    <?php
+                    $sql_slider_sub = "SELECT * FROM slider WHERE website_id='$website_id' and trash!='1' ORDER BY ai ASC LIMIT 100 OFFSET 1 ";
+                    $query_slider_sub = mysqli_query($conn_cpanel, $sql_slider_sub);
+                    while ($result_slider_sub = mysqli_fetch_array($query_slider_sub, MYSQLI_ASSOC)) { ?>
+                    <div class="item">
+                        <a target="blank" href="<?php echo $result_slider_sub['link']; ?>">
+                            <img class="d-block w-100"
+                                style="width:70%; height: 500px; margin-left: auto; margin-right: auto"
+                                src="<?php echo $url;?>media_agensi/<?php echo $website_id ?>/slider/<?php echo $result_slider_sub['gambar'] ?>">
+                        </a>
                     </div>
-                    <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="img/fungsi .png" style="object-fit: cover;">
-                        <div class="overlay">
-                            <div class="mb-2">
-                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href="perkhidmatan.html">Perkhidtaman</a>
-                                <a class="text-white" href="">March 21, 2021</a>
-                            </div>
-                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Antara fungsi Jabatan Bendahari Negeri Sabah, Lihat Selanjutnya ...</a>
-                        </div>
-                    </div>
-                    <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="img/abstract-huawei-lights-neon-hd-wallpaper-preview.jpg" style="object-fit: cover;">
-                        <div class="overlay">
-                            <div class="mb-2">
-                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href="https://web-two-iota.vercel.app/">Laman Web Akruan</a>
-                                <a class="text-white" href="">March 21, 2021</a>
-                            </div>
-                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="https://web-two-iota.vercel.app/">KUNGJUNGI LAMAN WEB AKRUAN KERAJAAN BENDAHARI NEGERI SABAH</a>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
-            </div>
-            <div class="col-lg-4 px-0">
-                <div class="flex-row mx-0">
-                    <div class="flex-column col-12 px-0">
-                        <div class="position-relative overflow-hidden" style="height: 250px;">
-                            <img class="img-fluid w-100 h-100" src="img/mqdefault.jpg" style="object-fit: cover;">
-                            <div class="overlay">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href="">Berita</a>
-                                    <a class="text-white" href=""><small>Feb 16, 2023</small></a>
-                                </div>
-                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="https://www.youtube.com/live/HuMiTti8QNg?feature=share">Majlis Amanat 2023 Youtube</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-column col-12 px-0">
-                        <div class="position-relative overflow-hidden" style="height: 250px;">
-                            <img class="img-fluid w-100 h-100" src="img/abstract-huawei-lights-neon-hd-wallpaper-preview.jpg" style="object-fit: cover;">
-                            <div class="overlay">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href="https://web-two-iota.vercel.app/">Laman Web</a>
-                                    <a class="text-white" href=""><small>14 Disember 2022</small></a>
-                                </div>
-                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="https://web-two-iota.vercel.app/">Kungjungi Laman Web Akruan Kerajaan Bendahari Negeri Sabah</a>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
+                <!-- Left and right controls -->
+                <a class="float-left" href="#myCarousel" data-slide="prev">
+                    <span style="background-color:skyblue; color:black; font-size:35px; position: absolute; top:50%; left: -27px;" class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="float-right" href="#myCarousel" data-slide="next">
+                    <span style="background-color:skyblue; color:black; font-size:35px; position: absolute; top:50%; right: -27px;" class="glyphicon glyphicon-chevron-right"></span>
+                </a>
             </div>
         </div>
+        <div class="col-md-2">
+
+        </div>
     </div>
+</div>
