@@ -1,3 +1,7 @@
+<?php 
+
+$queryPengumuman = "SELECT * FROM pengumuman WHERE website_id = '$website_id' AND trash != '1' ORDER BY tarikh DESC";?>
+
 <!-- Topbar Start -->
 <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center bg-dark px-lg-5">
@@ -5,7 +9,8 @@
                 <nav class="navbar navbar-expand-sm bg-dark p-0">
                     <ul class="navbar-nav ml-n2">
                         <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">Monday, March 14, 2023</a>
+                            <a class="nav-link text-body small" href="#"><span><?= date('l, F j, Y') ?></span>
+</a>
                         </li>
                     </ul>
                 </nav>
