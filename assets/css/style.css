@@ -9761,3 +9761,17 @@
     object-fit: cover;
    
 }
+
+/* logo  */
+
+/* Style for the container that holds the image and text */
+.enlarge-image {
+  transition: transform 0.3s;
+  /* Add a smooth transition effect */
+}
+
+/* Apply the zoom effect on hover */
+.enlarge-image:hover {
+  transform: scale(1.2);
+  /* You can adjust the scale value to control the level of zoom */
+}

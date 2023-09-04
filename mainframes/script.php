@@ -14,3 +14,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+<script>
+    $('.owl-logo').owlCarousel({
+        loop:true,
+        nav:true,
+        autoplay:true,
+        margin:10,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 5
+            },
+            1000: {
+                items: 8
+            }
+        }
+      });
+</script>
+
