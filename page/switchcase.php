@@ -32,7 +32,7 @@ switch ($page) {
   /*****page: carta*****/
   //CARTA ORGANISASI **TEXT&GAMBAR
   case 'carta':
-  $load = 'StrukturOrganisasi.php';
+  $load = 'carta.php';
   break;
 
   /*****page: perutusan******/

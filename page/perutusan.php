@@ -38,9 +38,6 @@ while ($getData1_perutusan = mysqli_fetch_array($test1_perutusan, MYSQLI_ASSOC))
                             <p><?php echo $getData1_perutusan['tajuk']; ?></p>
                             <p><?php echo nl2br($getData1_perutusan['deskripsi']); ?></p>
 
-
-
-
                         </div>
                         <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                             <div class="d-flex align-items-center">

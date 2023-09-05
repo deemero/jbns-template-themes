@@ -30,7 +30,7 @@
           <h2 class="text-center" style="border-bottom: 2px solid black;" ><?php echo $getData1_textno['tajuk']; ?></h2>
           <p class="nopic-desc"><?php echo nl2br($getData1_textno['deskripsi']);?></p>
             <?php if (!empty ($getData1_textno['link'])) { ?>
-              <a href="<?php echo $getData1_textno['link']; ?>" target="_blank">Lihat selanjutnya...</a> 
+              <a href="<?php echo $getData1_textno['link']; ?>" target="_blank">Lihat selanj gihuouiuouiouiuiuiouiouioouiuoiuiouioutnya...</a> 
             <?php } ?>
         </div>
       <?php }?>
