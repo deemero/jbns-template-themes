@@ -1,43 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <?php include("template/links.php"); ?>
-    <?php include ("connection/db.php"); ?>
-  </head>
-  <body>
-  <?php  
-    $pagetitles = $menu;  
-    $pagetitle = $sub;
-    include("template/header.php"); 
-  ?> 
-  <section id="infokorp" class="Txtnopic">
-    <div class="section-title">
-      <?php include ("breadcrumbs.php")?>
-      <h2 class="tajuk-besar"> <?php  echo $pagetitle; ?></h2>
+<head>
+    <?php include("connection/db.php"); ?>
+</head>
+<body>
+<?php
+$pagetitles = $menu;
+$pagetitle = $sub;
+$subTitle = ''; // Define $subTitle since it's used later in your code
+
+?>
+
+<section class="container my-5">
+    <div class="d-block d-sm-none mb-4">
+        <h1 style="text-align: center"><?= $subTitle ?></h1>
     </div>
-
-     <hr class="rounded">
-
-    <div class="container">
-      <?php
+    <div class="row">
+        <?php
         $statementTxtPic = "SELECT * FROM text_nopic WHERE website_id = '$website_id' AND menu = '$pagetitles' AND sub = '$pagetitle' and trash!='1'";
         $test1_textno = mysqli_query($conn_cpanel, $statementTxtPic);
-        while($getData1_textno = mysqli_fetch_array($test1_textno, MYSQLI_ASSOC))
-      { ?> 
-
-
-        <div class="nopic-body">
-          <h2 class="text-center" style="border-bottom: 2px solid black;" ><?php echo $getData1_textno['tajuk']; ?></h2>
-          <p class="nopic-desc"><?php echo nl2br($getData1_textno['deskripsi']);?></p>
-            <?php if (!empty ($getData1_textno['link'])) { ?>
-              <a href="<?php echo $getData1_textno['link']; ?>" target="_blank">Lihat selanj gihuouiuouiouiuiuiouiouioouiuoiuiouioutnya...</a> 
-            <?php } ?>
-        </div>
-      <?php }?>
+        while ($getData1_textno = mysqli_fetch_array($test1_textno, MYSQLI_ASSOC)) { ?>
+            <div class="col-md-4 mb-4">
+                <div class="card rounded rounded-0">
+                    <div class="card-header fw-bold">
+                        <?php echo $getData1_textno['tajuk']; ?>
+                    </div>
+                    <div class="card-body">
+                        <?php echo nl2br($getData1_textno['deskripsi']); ?>
+                    </div>
+                    <!-- Add "Lihat Kandungan" button here -->
+                    <a href="<?php echo $getData1_textno['link']; ?>" class="btn btn-outline-primary">Lihat Kandungan</a>
+                </div>
+            </div>
+        <?php } ?>
     </div>
-  </section>
-  <?php include("template/footer.php"); ?>
-  <button onclick="topFunction()" id="ToTop" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-  <?php include("template/scripts.php"); ?>
-  </body>
+</section>
+
+<?php
+// Add missing else condition here if needed
+?>
+
+</body>
 </html>
