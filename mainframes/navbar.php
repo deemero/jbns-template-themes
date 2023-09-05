@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Laman Utama</a>
+                <a href="index.php" class="nav-item nav-link active">Laman Utama</a>
                 <?php
                 // Fetch main menu items
                 $query = "SELECT * FROM menu_main WHERE website_id = '$website_id' AND page = '' AND trash != '1' GROUP BY menu ORDER BY main_order ASC";
@@ -27,7 +27,7 @@
                             <?php
                             while ($sub = mysqli_fetch_array($sub_data, MYSQLI_ASSOC)) :
                             ?>
-                                <a href="prutusan_bn.html" class="dropdown-item"><?php echo $sub['sub']; ?></a>
+                                 <a class="dropdown-item" href="page.php?page=<?php echo $sub['page'];?>&menu=<?php echo $sub['menu'];?>&sub=<?php echo $sub['sub'];?>"><?php echo $sub['sub'];?></a>
                                 <!-- You can add more submenu items here -->
                             <?php endwhile ?>
                         </div>
@@ -37,15 +37,7 @@
                 <!-- Additional menu items can be added here -->
             </div>
 
-            <!-- Search input (if needed) -->
-            <!--
-            <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
-                <input type="text" class="form-control border-0" placeholder="Keyword">
-                <div class="input-group-append">
-                    <button class="input-group-text bg-primary text-dark border-0 px-3"><i class="fa fa-search"></i></button>
-                </div>
-            </div>
-            -->
+            
         </div>
     </nav>
 </div>

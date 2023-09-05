@@ -3,7 +3,6 @@
 <html lang="en">
 <?php include('mainframes/head.php'); ?>
 
- 
 
 <body>
     <?php include('mainframes/header.php'); ?>
@@ -24,13 +23,6 @@
     <br>
     <?php include('content/logos.php')?>
    
-    
-    
-    
-  
-
-    
-    
     
  
 
