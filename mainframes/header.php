@@ -38,13 +38,22 @@ $num_rows = mysqli_num_rows($runlogo);
 if ($num_rows > 0) {
     while ($displayLogo = mysqli_fetch_array($runlogo, MYSQLI_ASSOC)) {
         ?>
-                <a href="index.html" class="navbar-brand p-0 ">
-                <h1 class="m-0 display-5 text-uppercase text-gradient text-resizable"><?php echo $displayLogo['nama']; ?></h1>
+                <a href="index.php" class="navbar-brand p-0 ">
+                <h1 class="m-0 display-5 text-uppercase  gradient-text" style="font-size: 2.7em;"><?php echo $displayLogo['nama']; ?></h1>
                 </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">
-                <a href=""><img class="img-fluid" src="<?php echo $url; ?>media_agensi/<?php echo $website_id ?>/maklumat_agensi/<?php echo $displayLogo['logo']; ?>" alt=""></a>
+                <a href=""><img class="img-fluid" src="<?php echo $url; ?>media_agensi/<?php echo $website_id ?>/maklumat_agensi/<?php echo $displayLogo['logo']; ?>" alt="" style="width: 150px; height: auto;"></a>
             </div>
+            <style>
+        /* Add gradient color to text */
+        .gradient-text {
+            background-image: linear-gradient(45deg, #ffcf07, #fe8116); /* Adjust the colors as needed */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
             <?php }
 }?>
         </div>
