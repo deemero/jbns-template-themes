@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-                <a href="index.php" class="nav-item nav-link active">Laman Utama</a>
+                <a href="index.php" class="nav-item nav-link ">Laman Utama</a>
                 <?php
 // Fetch main menu items
 $query = "SELECT * FROM menu_main WHERE website_id = '$website_id' AND page = '' AND trash != '1' GROUP BY menu ORDER BY main_order ASC";
