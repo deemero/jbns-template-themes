@@ -1,6 +1,14 @@
 <?php 
 
-$queryPengumuman = "SELECT * FROM pengumuman WHERE website_id = '$website_id' AND trash != '1' ORDER BY tarikh DESC";?>
+$queryPengumuman = "SELECT * FROM pengumuman WHERE website_id = '$website_id' AND trash != '1' ORDER BY tarikh DESC";
+$mainData11 = "SELECT * FROM agensi WHERE website_id = '" . $website_id . "'";
+$run_mainData11 = mysqli_query($conn_cpanel, $mainData11);
+$getData11 = mysqli_fetch_array($run_mainData11, MYSQLI_ASSOC);
+
+?>
+
+
+
 
 <!-- Topbar Start -->
 <div class="container-fluid d-none d-lg-block">
@@ -20,16 +28,31 @@ $queryPengumuman = "SELECT * FROM pengumuman WHERE website_id = '$website_id' AN
             </div>
         </div>
         <div class="row align-items-center bg-white py-3 px-lg-5">
-
-
         <div class="col-lg-4 d-none d-lg-block">
+        <?php
+        //statement logo
+        $querylogo = "SELECT * FROM agensi WHERE website_id = '$website_id' ";
+        $runlogo = mysqli_query($conn_cpanel, $querylogo);
+        $num_rows = mysqli_num_rows($runlogo);
+        //check data if empty
+        if ($num_rows > 0) {
+            while ($displayLogo = mysqli_fetch_array($runlogo, MYSQLI_ASSOC)) {
+        ?>
                 <a href="index.html" class="navbar-brand p-0 ">
-                    <h1 class="m-0 display-4 text-uppercase text-primary">Jabatan Bendahari <span class="text-secondary font-weight-normal">Negeri Sabah</span></h1>
+                <h1 class="m-0 display-5 text-uppercase text-gradient text-resizable"><?php echo $displayLogo['nama']; ?></h1>
                 </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">
-                <a href=""><img class="img-fluid" src="img/Logo jbns.png" alt=""></a>
+                <a href=""><img class="img-fluid" src="<?php echo $url; ?>media_agensi/<?php echo $website_id ?>/maklumat_agensi/<?php echo $displayLogo['logo']; ?>" alt=""></a>
             </div>
+            <?php }
+        } ?>
         </div>
     </div>
     <!-- Topbar End -->
+    <?php
+
+?>
+
+
+
