@@ -2,9 +2,6 @@
 <section id="testimonials" class="section-bg">
   <div class=" container" data-aos="fade-up">
 
-
-
-
          <?php
 $sql_logo = "SELECT * FROM pautan_agensi WHERE website_id = '$website_id' AND url_agensi='jbn' and trash!='0' ";
 $query_logo = mysqli_query($conn_cpanel, $sql_logo);

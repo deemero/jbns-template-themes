@@ -1,12 +1,24 @@
 <head>
     <meta charset="utf-8">
-    <title>Jabatan Bendahari Negeri Sabah</title>
+      <?php
+
+$statement3 = "SELECT * FROM agensi WHERE website_id = '$website_id' ";
+$query3 = mysqli_query($conn_cpanel, $statement3);
+
+$result3 = mysqli_fetch_array($query3, MYSQLI_ASSOC);
+?>
+
+    <title><?php echo $result3['nama']; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    
+
+      <!-- Site Icons -->
+    <link rel="shortcut icon" href="<?php echo $url; ?>media_agensi/<?php echo $website_id; ?>/maklumat_agensi/<?php echo $result3['logo']; ?>" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="<?php echo $url; ?>media_agensi/<?php echo $website_id; ?>/maklumat_agensi/<?php echo $result3['logo']; ?>">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">

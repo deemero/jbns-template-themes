@@ -7,9 +7,6 @@ $getData11 = mysqli_fetch_array($run_mainData11, MYSQLI_ASSOC);
 
 ?>
 
-
-
-
 <!-- Topbar Start -->
 <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center bg-dark px-lg-5">
