@@ -1,19 +1,19 @@
 <div class="container-fluid">
     <div class="container">
-       
+
         </div>
     </div>
 
     <?php
-    $queryPengumuman = "SELECT * FROM pengumuman WHERE website_id = '$website_id' AND trash != '1' ORDER BY tarikh DESC";
-    $runPengumuman = mysqli_query($conn_cpanel, $queryPengumuman);
-    $num_rows = mysqli_num_rows($runPengumuman);
-    ?>
+$queryPengumuman = "SELECT * FROM pengumuman WHERE website_id = '$website_id' AND trash != '1' ORDER BY tarikh DESC";
+$runPengumuman = mysqli_query($conn_cpanel, $queryPengumuman);
+$num_rows = mysqli_num_rows($runPengumuman);
+?>
 
     <div class="owl-carousel news-carousel">
         <?php
-        if ($num_rows > 0) {
-            while ($displayData = mysqli_fetch_array($runPengumuman, MYSQLI_ASSOC)) {
+if ($num_rows > 0) {
+    while ($displayData = mysqli_fetch_array($runPengumuman, MYSQLI_ASSOC)) {
         ?>
                 <div class="item">
                     <div class="position-relative mb-3">
@@ -28,15 +28,15 @@
                     </div>
                 </div>
         <?php
-            }
-        } else {
-        ?>
+}
+} else {
+    ?>
             <div class="item">
                 <p>No announcements available.</p>
             </div>
         <?php
-        }
-        ?>
+}
+?>
     </div>
 </div>
 

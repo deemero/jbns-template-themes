@@ -16,19 +16,19 @@ $query_slider_ba = mysqli_query($conn_cpanel, $sql_slider_ba);
         <div class="col-lg-12 px-0">
             <div class="owl-carousel main-carousel position-relative">
                 <?php
-                $sql_slider_ba = "SELECT * FROM slider WHERE website_id='$website_id' and trash!='1' ";
-                $query_slider_ba = mysqli_query($conn_cpanel, $sql_slider_ba);
+$sql_slider_ba = "SELECT * FROM slider WHERE website_id='$website_id' and trash!='1' ";
+$query_slider_ba = mysqli_query($conn_cpanel, $sql_slider_ba);
 
-                while ($result_slider_ba = mysqli_fetch_array($query_slider_ba, MYSQLI_ASSOC)) {
-                ?>
+while ($result_slider_ba = mysqli_fetch_array($query_slider_ba, MYSQLI_ASSOC)) {
+    ?>
                     <div class="position-relative overflow-hidden">
                         <div class="img-wrapper">
-                            <img src="<?php echo $url;?>media_agensi/<?php echo $website_id ?>/slider/<?php echo $result_slider_ba['gambar']; ?>" alt="Slider Image">
+                            <img src="<?php echo $url; ?>media_agensi/<?php echo $website_id ?>/slider/<?php echo $result_slider_ba['gambar']; ?>" alt="Slider Image">
                         </div>
                     </div>
                 <?php
-                }
-                ?>
+}
+?>
             </div>
         </div>
     </div>

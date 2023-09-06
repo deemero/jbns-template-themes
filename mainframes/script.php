@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
@@ -41,7 +41,7 @@
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -74,7 +74,7 @@
       });
   </script>
 
- 
+
 
 
 <script>
@@ -93,19 +93,15 @@ $('.brand-carousel').owlCarousel({
       items:5
     }
   }
-}) 
+})
 
 </script>
 
 
 
-    <script>      
+    <script>
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguages : 'ms',includedLanguages : 'ms,en'}, 'google_translate_element');
             }
     </script>
     <script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
-
-
-
-

@@ -5,7 +5,7 @@
     <div class="col-lg-12 mx-auto">
       <div class="card rounded shadow border-0">
         <div class="card-body p-5 bg-white rounded">
-    
+
           <div class="table-responsive">
             <table id="myTable" style="width:100%" class="table table-striped table-bordered">
               <thead>
@@ -21,11 +21,11 @@
               <tbody>
 
               <?php
-                $counter = 1;
-                $statement = "SELECT * FROM direktori WHERE website_id = '$website_id' AND menu = '$menu' AND sub = '$sub' and trash!='1' ORDER BY ai ASC";
-                $query = mysqli_query($conn_cpanel, $statement);
-                while ($displayDirektori = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-               ?>
+$counter = 1;
+$statement = "SELECT * FROM direktori WHERE website_id = '$website_id' AND menu = '$menu' AND sub = '$sub' and trash!='1' ORDER BY ai ASC";
+$query = mysqli_query($conn_cpanel, $statement);
+while ($displayDirektori = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+    ?>
                 <tr>
                                         <th scope="row"><?php echo $counter++; ?></th>
                                         <td>
@@ -39,8 +39,8 @@
                                         <td><?php echo $displayDirektori['notel'] ?></td>
                                         <td><?php echo $displayDirektori['bahagian'] ?></td>
                                     </tr>
-                                <?php } ?>
-                
+                                <?php }?>
+
               </tbody>
             </table>
           </div>

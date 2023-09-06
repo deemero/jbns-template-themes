@@ -18,7 +18,7 @@ $pagetitle = $sub;
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    
+
                     <div class="position-relative mb-3">
                         <img class="img-fluid w-100" src="" style="object-fit: cover;">
                         <div class="bg-white border border-top-0 p-4">
@@ -30,7 +30,7 @@ while ($getData1_perutusan = mysqli_fetch_array($test1_perutusan, MYSQLI_ASSOC))
     ?>
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                                     href=""><?php echo $getData1_perutusan['tajuk']; ?></a>
-                                <a class="text-body" href=""><?= date('l, F j, Y') ?></a>
+                                <a class="text-body" href=""><?=date('l, F j, Y')?></a>
                             </div>
 
                             <h1 class="mb-3 text-secondary text-uppercase font-weight-bold"><?php echo $pagetitle; ?></h1>
