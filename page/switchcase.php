@@ -59,7 +59,7 @@ switch ($page) {
   /****** page: galeri ********/
   //GALERI/ALBUM **THUMBNAIL, LIST **FILE
   case 'galeri':
-  $load = 'Galeri.php';
+  $load = 'galeri.php';
   break;
 
 

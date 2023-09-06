@@ -51,3 +51,61 @@
 
 <!-- Customized Bootstrap Stylesheet -->
 <link href="css/style.css" rel="stylesheet">
+
+<!-- media script -->
+
+<script>
+    $('.geleri-slider').owlCarousel({
+        loop:true,
+        nav:true,
+        autoplay:true,
+        margin:10,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+      });
+  </script>
+
+ 
+
+
+<script>
+$('.brand-carousel').owlCarousel({
+  loop:true,
+  margin:10,
+  autoplay:true,
+  responsive:{
+    0:{
+      items:1
+    },
+    600:{
+      items:3
+    },
+    1000:{
+      items:5
+    }
+  }
+}) 
+
+</script>
+
+
+
+    <script>      
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguages : 'ms',includedLanguages : 'ms,en'}, 'google_translate_element');
+            }
+    </script>
+    <script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+
+
+
+
